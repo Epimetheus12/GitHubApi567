@@ -4,7 +4,7 @@ from HW04a_Fangji_Liang import get_repo, UrlOpenError
 class TestHW04a(unittest.TestCase):
 
     def test_result(self):
-        test_result = ["Repo: GitHubApi567 Number of commits: 4",
+        test_result = ["Repo: GitHubApi567 Number of commits: 7",
          "Repo: SSW-567-HW Number of commits: 1",
          "Repo: SSW-567-HW01-Triangle Number of commits: 2",
          "Repo: Student-Repository Number of commits: 1",
