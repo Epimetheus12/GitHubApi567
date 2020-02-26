@@ -28,7 +28,7 @@ def get_repo(id):
     regex = re.compile(r"(?<=\"name\":\").+?(?=\")", flags=re.IGNORECASE)
     temp_repo = re.findall(regex, str(repo.read()))
     result = []
-
+    
     for repo in temp_repo:
         url_com = f"https://api.github.com/repos/{id}/{repo}/commits"
         try:
@@ -36,8 +36,7 @@ def get_repo(id):
         except error.HTTPError as e:
             raise UrlOpenError(f"{url_com} -- Can't open this page. Error：" + str(e.code))
         except error.URLError as e:
-            raise UrlOpenError("Network connection timed out or failed")
-        
+            raise UrlOpenError("Network connection timed out or failed")  
         result.append((f"Repo: {repo} Number of commits: {len(json.loads(com))}"))   
     return result
             
